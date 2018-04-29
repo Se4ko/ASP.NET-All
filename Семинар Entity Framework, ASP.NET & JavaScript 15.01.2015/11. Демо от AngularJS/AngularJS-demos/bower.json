@@ -1,0 +1,19 @@
+{
+  "name": "AngularJS-Generali-Demos",
+  "version": "0.0.0",
+  "authors": [
+    "Doncho Minkov <donchominkov@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.11",
+    "bootstrap": "~3.3.2"
+  }
+}

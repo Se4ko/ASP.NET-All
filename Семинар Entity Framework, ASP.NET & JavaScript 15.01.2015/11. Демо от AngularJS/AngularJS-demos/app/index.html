@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS demos</title>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+
+    <!-- Controllers -->
+    <script src="scripts/controllers/ShowHideButtonController.js"></script>
+    <script src="scripts/controllers/AjaxDataInTableController.js"></script>    
+
+    <!-- Filters -->
+    <script src="scripts/filters/skip-filter.js"></script>    
+    <script src="scripts/filters/byProperty-filter.js"></script>    
+
+    <script src="scripts/app.js"></script>
+    <style>
+    .row{
+        padding-bottom: 25px;
+        border-bottom: 1px solid black;
+    }
+
+    .row:last-of-type{
+        border-bottom: none;
+    }
+
+    .sortable-table th, .show-hide-content{
+        cursor: pointer;
+        cursor: hand;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="root" class="container">
+        <div class="row" ng-controller="ShowHideButtonController">
+            <h1 class="col-md-12 text-center show-hide-content" ng-click="isContentVisible = !isContentVisible">{{title}}</h1>
+            <p class="text-center"><u>Click on the headear to show/hide the demo</u></p>
+            <div class="row col-md-12" ng-show="isContentVisible">
+                <label class="col-md-2 btn btn-info" for="box-visible">
+                    {{isVisible?'Hide':'Show'}}
+                </label>
+                <input id="box-visible" type="checkbox" ng-model="isVisible" ng-hide="true" />
+                <p class="lead col-md-8"
+                    ng-show="isVisible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae officia molestias asperiores veritatis maiores maxime numquam, voluptatem reiciendis, quibusdam velit odit, ea voluptate. Sapiente nulla numquam aperiam, pariatur voluptates mollitia.</p>
+            </div>
+        </div>
+        <div class="row" ng-controller="AjaxDataInTableController">    
+            <h1 class="col-md-12 text-center show-hide-content" ng-click="isContentVisible= !isContentVisible">{{title}}</h1>
+            <p class="text-center"><u>Click on the headear to show/hide the demo</u></p>
+            <div class="col-md-12 row" ng-show="isContentVisible">
+                <select ng-model="pageSize" class="form-control">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <div>Page: {{((pageSize = (pageSize || 10))+skipCount)/pageSize}}</div>
+                <button href="#" class="btn btn-info col-md-offset-2 col-md-4" ng-click="skipCount=skipCount?skipCount-pageSize:pageSize">Prev</button>
+                <button href="#" class="btn btn-info col-md-4" ng-click="skipCount=skipCount?skipCount+pageSize:pageSize">Next</button>
+                <input class="col-md-12 form-control" type="text" ng-model="query" />
+                <table class="sortable-table table table-striped table-hover">
+                    <tr>
+                        <th ng-click="desc = !desc">Name</th>
+                        <th>Address</th>
+                        <th>Contacts</th>
+                    </tr>
+                    <tr ng-repeat="office in offices | skip: skipCount | limitTo:pageSize | orderBy:'Name':desc | filterByProperty:'Name':query">
+                        <td>{{office.Name}}</td>
+                        <td>{{office.LocationName}}</td>
+                        <td>
+                            <ul>
+                                <li ng-repeat="contact in office.Contacts">
+                                    {{contact.Contact}}
+                                </li>
+                                </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
