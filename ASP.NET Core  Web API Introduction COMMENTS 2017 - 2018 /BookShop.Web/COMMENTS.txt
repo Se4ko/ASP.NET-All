@@ -1,0 +1,710 @@
+﻿Entity Framefork Core e napraven taka,
+4e Contexta da e lesen da se podmqna,
+toi sam po sebesi izpolzva Interfeisi i
+ne e problem da go izpolzvame direktno,
+lesno moje da se zameni.
+
+Predi go Wrap-vahme v IRepository, 
+za da moje po lesno da se Testva.
+
+
+
+
+Kakvo e WEB API & REST?
+
+REST е архитектурен модел, 
+който се основава на HTTP и 
+използва HTTP заявки,
+Request & Response,
+глаголи и кодове за статус, 
+за комуникация.
+ 
+Uslugite REST moje da se polzvat, 
+ot vsqko ustroistvo, koeto polzva http.
+
+API - Интерфейс за програмиране на приложения
+
+WEB API v .NET e Na4inut, 
+s koito zapisvame uslugite za REST.
+
+
+V stariq ASP.NET,
+WEB API beshe otdelna tehnologia, 
+s otdelen NuGet packet,
+otdelni Classove, Controller-i.
+
+Sega e na Edno Mqsto:
+Iskam da pisha View-ta s html - OK nasledqvam si Controller,
+Iskam da pisha WEB API - OK nasledqvam si Controller.
+
+Dannite, koito vrushtam ne sa View-ta, 
+a sa HTTP Status-i, 
+zaedno s eventualno nqkakvi Danni v Nqkakuv Format.
+
+
+ASP.NET WEB API Core ima Data Layer,  
+toi e Entity Framework DBContext.
+
+Imame Modeli,
+koito prez WEB API vrushtat, nqkakuv Format:
+
+1. Custom Format
+2. XML
+3. JSON
+
+Tezi danni se konsumirat ot vsqkakvi prilojeniq,
+no ne sa user friendly, by default e JSON.
+
+ASP.NET WEB API Core podurja Content Negotiation 
+Content Negotiation e: 
+
+Ako Clenta kaje: Az Accept-vam XML-li, shte mu vurne XML.
+Ako Clenta kaje: Az Accept-vam JSON-ni, shte mu vurne JSON.
+Ako Clenta kaje: Az Accept-vam ei tozi Custom Format,
+ako go podurja, shte go vurne nego, 
+bez da smenqm logikata v Controller-a.
+
+Ako iskam da dobavq moq WEB API Core, da Podurja XML, 
+samo Izvikvam edin method v Servic-ite i 
+XML-a raboti i 
+ako nqkoi prati s header-ite - az accept-vam XML i
+avtomati4no shte si go polu4i.
+WEB API Core Serializira dannite, kakto Clienta o4akva.
+
+
+
+
+Model Binding & Validation 
+ModelState e sushtia - Sushtite & Validation.
+
+Routes (tva e mapp-vaneto mejdu URL-a & Code-a) i
+sa kato starite, no ima preporu4itelen ot Microsoft Rout, 
+koito da polzvame, ako iskame da pravim REST.
+
+API ako pravim, lesno kazvame kak: 
+Controller-a da sledva REST Standart-a.
+
+Ako Ne Iskame da pravim REST,
+standartniq routing si raboti: 
+
+s Controller/Action/id primerno
+
+
+
+
+
+Filters
+Authorization, CORS (koi domain-i mogat da mi dostupvat API-to)..
+
+
+Testability
+Sushtia Dependency Injection,
+sushtata Testvaemost i
+Hostinga e sushtia:  IIS, Azure, self-hosting(Kestrel) 
+
+
+
+Controllers
+
+Ako iskame da pravim REST, 
+shte go mapp-vame na method-i: 
+GET, POST, PUT, DELETE i
+URL-ite sa, ne6to po4ti ednakvo,
+polzvame si Query String
+
+Actions                 Http Method      Relative URL       Method
+
+Get a list of posts       GET             /api/posts/       Get()
+
+Get a post by id          GET            /api/posts/id      Get(id)
+
+Get a post by Category    Get   /api/posts?category=news    Get(string category)
+
+Create a new Post         POST          /api/posts/         Post(PostModel value)
+
+Update a post             PUT          /api/posts/id        Put(int id, PostModel value)
+
+Delete a post             DELETE      /api/posts/id         Delete(int id)
+
+
+
+Kakvo e POCO Class?
+
+POCO - Plain Old CLR Object.
+Tova e Normalen Class, bez Attributes,
+bez nishto koeto imame v nqkakuv framework.
+POCO e 4ist class s nqkakvi properti-ta bez vurzanost za nishto.
+
+Kak se pravi ASP.NET WEB API Core?
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
+
+File, New, Project, 
+ASP.NET Core Application, ProjectName, 
+Web Application (Model-View-Controller)-tva e MVC posle dobavqm web api controllers
+ili Web Api(bez view-ta) .. i
+se Scafold-va proekta.
+
+
+
+
+
+
+Dobavqm v papka Controllers, SomeController : Controller ..
+
+Action-ite vrushtat nqkolko Type-a,
+Generic Type <T>, IEnumerable<T> 
+
+public Comment GetCommentById(int id){..}
+public IEnumerable<Comment> GetCommentById(int id){..}
+
+Vurnatata Data avtomati4no se Serializira do JSON & XML.
+Ako slojim void, tova e status code 204
+
+
+Action-ite vrushtat 3 Vida Return Types + Synchronous action:
+
+Specific type 
+Най-простото действие връща:
+примитивен или сложен тип данни (string ili custom object type) ili
+колекция от персонализирани обекти на продукта:
+
+[HttpGet]
+public IEnumerable<Product> Get()
+{
+    return _repository.GetProducts();
+}
+
+
+IActionResult returns abstract HTTP response,
+with status code & data.
+
+Подходящ е, когато в едно действие, 
+са възможни множество типове връщане на ActionResult. 
+Типовете ActionResult представляват различни кодове за състоянието на HTTP. 
+Често срещани са: 
+
+BadRequestResult (400) 
+NotFoundResult (404) 
+OkObjectResult (200)
+
+
+
+
+Synchronous action - IActionResult:
+
+Tova e Sinhronen return s 2 type-a, NotFound & Ok(product):
+
+HttpGet("{id}")]
+[ProducesResponseType(200, Type = typeof(Product))]
+[ProducesResponseType(404)]
+public IActionResult GetById(int id)
+{
+    if (!_repository.TryGetProduct(id, out var product))
+    {
+        return NotFound();  //vrushta 404 Status Code ako po id ne e nameren produkt
+    }
+
+    return Ok(product);//vrushta 200 Status Code Ok + JSON Serialized data
+}
+
+
+
+
+
+Asynchronous action - async Task<IActionResult> & await  
+
+HttpPost]
+[ProducesResponseType(201, Type = typeof(Product))]
+[ProducesResponseType(400)]
+public async Task<IActionResult> CreateAsync([FromBody] Product product)
+{
+    if (!ModelState.IsValid)
+    {
+        return BadRequest(ModelState);
+    }
+
+    await _repository.AddProductAsync(product);
+
+    return CreatedAtAction(nameof(GetById), new { id = product.Id }, product);
+}
+
+
+
+
+
+ActionResult<T>
+
+The IActionResult return type, 
+when multiple ActionResult return types are possible in an action.
+NotFound(), BadRequest(ModelState), Ok(product) tova e 200, Unauthorized() tova e 401
+
+Ideqta e da se vrushtat Code-ove, 
+View ne moga da vurna, Html ne moga, 
+ako vurna View Model ili Id se serializirvat dannite i
+se vrushtat kato JSON by default.
+
+Po-dolu Post nqma da se Bind-ne, 
+ako ne sloja izri4no [FromBody] attributa,
+taka se Baind-vat neshtata ot JSON:
+
+
+[HttpPost]
+public IActionResult Post([FromBody]Cat cat)
+{
+    if(!ModelState.isValid)
+    {
+        return BadRequest(ModelState);
+    }
+
+    var id = this.data.add(cat);
+
+    return Ok(id);
+}
+
+Put-a kazva update-vane.
+Vij, samo podavam Model State-a:
+if(!ModelState.isValid) i to mi Serializira Greshkata:
+
+[HttpPut]
+public IActionResult Put(int id, [FromBody]Cat cat)
+{
+    if(!ModelState.isValid)
+    {
+        return BadRequest(ModelState);
+    }
+
+    var dataCat = this.data.Find(id);
+
+    if(dataCat == null)
+    {
+        return NotFound();
+    }
+
+    dataCat.Name;
+    dataCat.Color;
+    dataCat.Age;
+
+    return Ok();
+}
+
+Trqbva da napravq:
+
+BaseController : Controller i
+tuk definiram obshti neshta, povtarq6ti se, 
+posle vseki controller, nasledqva BaseController.
+
+
+Pravq si ASP.NET MVC Prilojenie, posle dobavqm WEB API proekt, 
+kato sloja na osnovniq Solution New, Project, Web API i
+mu pravq Servic-i, kato vrushtam danni i 
+gi polzvam v MVC Controller-ite ma MVC Clienta i
+nakraq Deploy-vame ediniq app na ediniq Domain i 
+drugia app na drugiq Domain.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
