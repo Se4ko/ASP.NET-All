@@ -1,0 +1,25 @@
+﻿@using BlogSystem.Web.ViewModels.Posts
+@model PostIndexViewModel
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm("Index", "Posts", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+            @Html.AntiForgeryToken()
+            
+            <div>
+                @Html.LabelFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Title)
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Subtitle)
+                @Html.TextBoxFor(m => m.Subtitle, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Subtitle)
+            </div>
+            <div>
+                <input type="submit" />
+            </div>
+        }
+    </div>
+</div>

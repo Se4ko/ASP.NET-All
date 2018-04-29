@@ -1,0 +1,10 @@
+﻿@model BlogSystem.Web.ViewModels.Posts.PostIndexViewModel
+@using BlogSystem.Web.Controllers
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.Submit("Send").Attr("style", "color: red")
+}
