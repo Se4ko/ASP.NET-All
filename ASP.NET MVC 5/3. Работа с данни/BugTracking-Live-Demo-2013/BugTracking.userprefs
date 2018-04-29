@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{F0DB5C7B-3ACF-4F4E-9C7B-5E10C8CD9BD9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BugTracking/Controllers/BugsAdministrationController.cs">
+    <Files>
+      <File FileName="BugTracking/Controllers/BugsAdministrationController.cs" Line="12" Column="34" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.BugTracking PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

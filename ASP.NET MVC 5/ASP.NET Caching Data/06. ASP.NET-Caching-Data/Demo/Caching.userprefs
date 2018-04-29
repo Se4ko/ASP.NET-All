@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{C265A72D-B40E-46DF-B669-AFB3FFB3E878}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Caching.MVC/Controllers/HomeController.cs">
+    <Files>
+      <File FileName="Caching.MVC/Controllers/HomeController.cs" Line="41" Column="42" />
+      <File FileName="Caching.MVC/Views/Home/Index.cshtml" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

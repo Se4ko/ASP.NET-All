@@ -1,0 +1,13 @@
+﻿@model string
+
+@{
+    var id = ViewBag.Id ?? 0;
+}
+
+<div class="">
+    <div>
+    </div>
+    <div class="input">
+        @Html.TextBoxFor(m => m, new { @class = "form-control pesho" })
+    </div>
+</div>
