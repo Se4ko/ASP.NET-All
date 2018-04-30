@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{E68010FE-1F2E-4253-B747-C83CD8E9D053}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CarDealer.Web/COMMENTS.text">
+    <Files>
+      <File FileName="CarDealer.Web/Infrastructure/Extensions/ControllerExtensions.cs" Line="1" Column="1" />
+      <File FileName="CarDealer.Web/Startup.cs" Line="31" Column="39" />
+      <File FileName="CarDealer.Web/Views/Shared/_Layout.cshtml" Line="62" Column="1" />
+      <File FileName="CarDealer.Services/IPartService.cs" Line="3" Column="24" />
+      <File FileName="CarDealer.Services/Implementations/PartService.cs" Line="29" Column="49" />
+      <File FileName="CarDealer.Web/Controllers/PartsController.cs" Line="1" Column="1" />
+      <File FileName="CarDealer.Web/Controllers/CarsController.cs" Line="66" Column="2" />
+      <File FileName="CarDealer.Web/COMMENTS.text" Line="665" Column="32" />
+      <File FileName="CarDealer.Services/ISaleService.cs" Line="1" Column="1" />
+      <File FileName="CarDealer.Services/ICarService.cs" Line="1" Column="1" />
+      <File FileName="CarDealer.Services/Implementations/CarService.cs" Line="63" Column="51" />
+      <File FileName="CarDealer.Web/Views/Cars/Parts.cshtml" Line="1" Column="1" />
+      <File FileName="CarDealer.Web/Views/Cars/_CarForm.cshtml" Line="1" Column="1" />
+      <File FileName="CarDealer.Services/Models/Cars/CarWithPartsModel.cs" Line="6" Column="46" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CarDealer.Web PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
