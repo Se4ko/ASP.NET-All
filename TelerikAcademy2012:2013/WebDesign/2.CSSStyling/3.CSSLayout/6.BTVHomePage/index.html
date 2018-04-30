@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BTV Home Page</title>
+    <style>
+        /* RESET */
+        body, h1, ul, li {
+            margin: 0;
+            padding: 0;
+            font: 15px/1.2 Tahoma, sans-serif;
+            font-weight: normal;
+        }
+
+        img { border: none; }
+
+        /* TAGS */
+        /* Style the body, in order not to trigger a :hover in the borders of the tabs */
+        body {
+            margin: 15px auto 0; /* Center */
+            width: 598px;
+            border: 5px solid #ddd;
+            border-radius: 3px;
+            background: #aaa;
+            box-shadow: 1px 1px 6px #444;
+        }
+
+        a {
+            color: #A5AFB3;
+            text-decoration: none;
+        }
+
+        /* TABS */
+        .tabs {
+            position: relative; /* Create a stacking context for the .tab-content */
+            overflow: hidden; /* Clear float */
+            height: 287px; /* Fixed height :( */
+            background: #1E3741;
+        }
+
+        .tab { float: left; } /* Makes the .tab-titles on one line */
+
+        /* TAB TITLE */
+        .tab-title a {
+            display: block;
+            padding: 5px 15px;
+            background: #4B5F67;
+            color: #93ACB6;
+        }
+        .tab:not(:last-child) .tab-title a { border-right: 1px solid #1E3741; }
+        /* Make the space right from the last tab select the first tab.
+           Uncomment background to see it. */
+        .tab-title a {
+            position: relative;
+            z-index: 1;
+        }
+        .tab:first-child .tab-title a::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 598px;
+            height: 100%;
+            /* background: #f00; */
+            content: " ";
+        }
+
+        /* TAB ITEMS */
+        .tab-content {
+            top: 28px;
+            left: 0;
+            width: 100%;
+        }
+        .tab-item img {
+            top: 0;
+            right: 0;
+        }
+        /* Hidden by default */
+        .tab-content, .tab-item img {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .tab-item img {
+            -webkit-transition: opacity 333ms ease-out;
+               -moz-transition: opacity 333ms ease-out;
+                 -o-transition: opacity 333ms ease-out;
+                    transition: opacity 333ms ease-out;
+        }
+
+        .tab-item a {
+            display: block;
+            padding: 5px 10px;
+            width: 180px;
+        }
+        .tab-item:not(:last-child) a { border-bottom: 1px solid #3A4F58; }
+
+        /* Hover .tab-title */
+        .tabs:not(:hover) .tab:first-child .tab-title a, .tab:hover .tab-title a {
+            background: transparent;
+            color: #fff;
+        }
+
+        /* Hover .tab-item */
+        .tabs:not(:hover) .tab-item:first-child a, .tab-item:hover a,
+        .tab-title:hover ~ .tab-content .tab-item:first-child a {
+            background: #00968C;
+            color: #fff;
+        }
+
+        /* Hover .tab-title and .tab-item */
+        .tabs:not(:hover) .tab-item:first-child img, .tab-item:hover img,
+        .tab-title:hover ~ .tab-content .tab-item:first-child img,
+        .tabs:not(:hover) .tab:first-child .tab-content, .tab:hover .tab-content {
+            z-index: 1;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="tabs">
+        <!-- TAB -->
+        <section class="tab">
+            <h1 class="tab-title"><a href="#">Новините</a></h1>
+
+            <ul class="tab-content">
+                <li class="tab-item">
+                    <a href="#">
+                        Интернет новини - 13.07.2010 г.
+                        <img src="images/news-1.jpg" alt="news-1" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        Проливни дъждове в Дания, Китай и Индия, необичайни горещини в Иран
+                        <img src="images/news-2.jpg" alt="news-2" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        Над 200 хектара горят на територията на бивш военен полигон
+                        <img src="images/news-3.jpg" alt="news-3" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        23-ма ранени при сблъсък на два пътнически влака
+                        <img src="images/news-4.jpg" alt="news-4" width="398" height="265" />
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- TAB -->
+        <section class="tab">
+            <h1 class="tab-title"><a href="#">Спорт</a></h1>
+
+            <ul class="tab-content">
+                <li class="tab-item">
+                    <a href="#">
+                        Българинът се активизира през втората част
+                        <img src="images/sport-1.jpg" alt="sport-1" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        Браво на ръководството на Байерн, браво на Хосеп Гуардиола.
+                        <img src="images/sport-2.jpg" alt="sport-2" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        Димитър Бербатов бе част от силно апатичния и ялов тим
+                        <img src="images/sport-3.jpg" alt="sport-3" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        ЦСКА и Стойчо продължават да се самозаблуждават
+                        <img src="images/sport-4.jpg" alt="sport-4" width="398" height="265" />
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- TAB -->
+        <section class="tab">
+            <h1 class="tab-title"><a href="#">Емисии</a></h1>
+
+            <ul class="tab-content">
+                <li class="tab-item">
+                    <a href="#">
+                        Над 200 хектара горят на територията на бивш военен полигон
+                        <img src="images/news-5.jpg" alt="news-1" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        Проливни дъждове в Дания, Китай и Индия, необичайни горещини в Иран
+                        <img src="images/news-2.jpg" alt="news-2" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        Интернет новини - 13.07.2010 г.
+                        <img src="images/news-3.jpg" alt="news-3" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        23-ма ранени при сблъсък на два пътнически влака
+                        <img src="images/news-4.jpg" alt="news-4" width="398" height="265" />
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- TAB -->
+        <section class="tab">
+            <h1 class="tab-title"><a href="#">Любопитно</a></h1>
+
+            <ul class="tab-content">
+                <li class="tab-item">
+                    <a href="#">
+                        Браво на ръководството на Байерн, браво на Хосеп Гуардиола.
+                        <img src="images/sport-2.jpg" alt="sport-2" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        Димитър Бербатов бе част от силно апатичния и ялов тим
+                        <img src="images/sport-5.jpg" alt="sport-1" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        Проливни дъждове в Дания, Китай и Индия, необичайни горещини
+                        <img src="images/news-3.jpg" alt="news-3" width="398" height="265" />
+                    </a>
+                </li>
+
+                <li class="tab-item">
+                    <a href="#">
+                        23-ма ранени при сблъсък на два пътнически влака
+                        <img src="images/news-4.jpg" alt="news-4" width="398" height="265" />
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </article>
+</body>
+</html>

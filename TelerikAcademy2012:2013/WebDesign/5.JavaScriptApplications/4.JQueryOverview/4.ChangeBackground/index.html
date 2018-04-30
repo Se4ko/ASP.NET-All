@@ -1,0 +1,82 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Change Background</title>
+    <style>
+        .ng-cloak { display: none; }
+    
+        body {
+            -webkit-transition: background 100ms;
+               -moz-transition: background 100ms;
+                 -o-transition: background 100ms;
+                    transition: background 100ms;
+                    
+            text-align: center;
+        }
+
+        form {
+            background: #fff;
+            border: 3px solid #999;
+            border-radius: 5px;
+            display: inline-block;
+            padding: 10px;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        p { margin-bottom: 0; }
+
+        input[type = "number"] { width: 3.5em; }
+        
+        code {
+            background: #000;
+            color: #fff;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body ng-controller="Ctrl" ng-style="{ background: getBackground() }">
+    <form class="ng-cloak">
+        <ul>
+            <li>
+                <label>
+                    <span>R: </span>
+                    <input type="range" ng-model="r" data-byte />
+                    <input type="number" ng-model="r" data-byte />
+                    <code>{{ r }}</code>
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    <span>G: </span>
+                    <input type="range" ng-model="g" data-byte />
+                    <input type="number" ng-model="g" data-byte />
+                    <code>{{ g }}</code>
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    <span>B: </span>
+                    <input type="range" ng-model="b" data-byte />
+                    <input type="number" ng-model="b" data-byte />
+                    <code>{{ b }}</code>
+                </label>
+            </li>
+        </ul>
+        
+        <p>Color: <code>{{ getBackground() }}</code></p>
+    </form>
+
+    <script src="http://epeli.github.io/underscore.string/lib/underscore.string.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
