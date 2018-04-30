@@ -1,0 +1,41 @@
+﻿@model _2.BitCalculator.Models.CalculatorModel
+@{
+    ViewBag.Title = "`Calculator";
+}
+
+@{
+    ViewBag.Title = "Bit Calculator";
+}
+
+<hgroup>
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+<div>
+    <br />
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <div class="control-group">
+            <label for="value" class="control-label">Quantity</label>
+            <div class="controls">@Html.TextBox("value", 1, new { onchange = "this.form.submit();", id = "value" })</div>
+        </div>
+        <div class="control-group">
+            <label for="types" class="control-label">Type</label>
+            <div class="controls">@Html.DropDownListFor(m => m.SelectedType, Model.Types, new { onchange = "this.form.submit();", id = "types" })</div>
+        </div>
+        <div class="control-group">
+            <label for="kilo" class="control-label">Kilo</label>
+            <div class="controls">@Html.DropDownListFor(m => m.SelectedKilo, Model.Kilos, new { onchange = "this.form.submit();", id = "kilo" })</div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" value="Go" class="btn" />
+            </div>
+        </div>
+    }
+</div>
+<div>
+    @if (Model.Result != null)
+    {
+        @Html.Partial("_CalculatorResults", Model.Result)
+    }
+</div>

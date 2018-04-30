@@ -1,0 +1,24 @@
+﻿@model MiniTwitter.Models.HomePageViewModel
+
+@{
+    ViewBag.Title = "Home";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    Html.RenderPartial("_CreateTweet", Model.NewTweet);
+}
+else
+{
+    <div class="lead">
+        Register or login in order to post tweets. <br />
+        There is an admin account created for you. Enter "admin" as the username and "adminn" as the password to use it.
+    </div>                                                                     
+}
+
+<div class="row-fluid" id="tweets">
+    @foreach (var tweet in Model.Tweets)
+    {
+        @Html.Partial("_Tweet", tweet)
+    }
+</div>

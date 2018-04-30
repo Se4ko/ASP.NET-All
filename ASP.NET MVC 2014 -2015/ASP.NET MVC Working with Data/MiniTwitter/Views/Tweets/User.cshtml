@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MiniTwitter.Models.TweetViewModel>
+@{
+    ViewBag.Title = "Tweets by " + Model.First().Username;
+}
+
+<h1>@ViewBag.Title</h1>
+
+@if (!Model.Any())
+{
+    <div class="text-error">This user has no tweets.</div>
+}
+else
+{
+    foreach (var tweet in Model)
+    {
+        @Html.Partial("_Tweet", tweet)
+    }
+}

@@ -1,0 +1,31 @@
+﻿@model LibrarySystem.Models.BookDetailsViewModel
+
+@{
+    ViewBag.Title = "Book Details";
+}
+<header>
+    <header>
+        <p class="book-title">
+            @Html.DisplayFor(b => b.Title)
+        </p>
+        <p class="book-author">
+            @Html.DisplayFor(b => b.Author)
+        </p>
+        <p class="book-isbn">ISBN @Html.DisplayFor(b => b.ISBN)</p>
+        <p class="book-isbn">
+            Web site:
+            <a href='@Html.DisplayFor(b => b.Website)'>
+                @Html.DisplayFor(b => b.Website)
+            </a>
+        </p>
+    </header>
+
+    <div class="row-fluid">
+        <div class="span12 book-description">
+            <p>@Html.DisplayFor(b => b.Description)</p>
+        </div>
+    </div>
+    <div class="back-link">
+        @Html.ActionLink("Back to books", "Index", new { controller = "Home" }, new { @class = "link-button" })
+    </div>
+</header>

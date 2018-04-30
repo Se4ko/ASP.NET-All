@@ -1,0 +1,59 @@
+﻿@model IEnumerable<LibrarySystem.Models.Category>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+@Html.Label("Search: ")
+@(Html.Kendo()
+    .AutoComplete()
+    .Name("search-books")
+    .DataTextField("Value")
+    .IgnoreCase(true)
+    .Placeholder("Search books by author or title")
+    .DataSource(ds =>
+        {
+            ds.Read(r =>
+                {
+                    r.Action("GetBookNamesAndAuthors", "Books").Data("onAdditionalData");
+                })
+            .ServerFiltering(true);
+        })
+    .Filter(FilterType.Contains)
+    .Template("<span data-id='${ Id }'>${ Value }</span>")
+    .Events(ev =>
+        {
+            ev.Select("selectBook");
+        }))
+
+<div class="clearfix"></div>
+
+@(Html.Kendo()
+    .TreeView()
+    .Name("tree-view-categories")
+    .BindTo(Model
+        .Select(c => new TreeViewItemModel()
+        {
+            Text = c.Name,
+            Items = c.Books
+                .Select(b => new TreeViewItemModel()
+                {
+                    Text = string.Format("{0} by {1}", b.Title, b.Author),
+                    Url = Url.Action("Details", "Books", new { id = b.Id })
+                })
+            .ToList()
+        }))
+        .HtmlAttributes(new { width = 500 }))
+
+<script type="text/javascript">
+    function onAdditionalData() {
+        return {
+            text: $("#search-books").val()
+        };
+    }
+
+    function selectBook(e) {
+        var id = e.item.find("span").data("id");
+        window.location.pathname = "Books/Details/" + id;
+    }
+</script>

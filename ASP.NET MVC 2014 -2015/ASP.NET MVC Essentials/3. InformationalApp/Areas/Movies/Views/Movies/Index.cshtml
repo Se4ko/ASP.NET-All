@@ -1,0 +1,24 @@
+﻿@model _3.InformationalApp.Areas.Movies.Models.MoviesMasterDetails
+
+@{
+    ViewBag.Title = "Movies";
+}
+
+@section Heading{
+    <h1>@ViewBag.Title</h1>
+}
+
+<div>
+    @foreach (var item in Model.Movies)
+    {
+        <h4>@Html.ActionLink(item.Title, "Index", new { id = item.Id }, new { @class = "details" })</h4>
+    }
+</div>
+
+<div id="movie-details"></div>
+
+@if (Model.SelectedMovie != null)
+{
+    Html.RenderPartial("_PartialBookDetails", Model.SelectedMovie);
+
+}

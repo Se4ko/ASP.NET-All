@@ -1,0 +1,12 @@
+﻿@model MiniTwitter.Models.TweetAdministrationViewModel
+
+<div class="k-edit-form-container">
+    <label class="editor-label">
+        @Html.DisplayNameFor(t => t.Content)
+    </label>
+    <div class="editor-field">
+       <div class="text-box single-line">
+         @Html.EditorFor(t => t.Content)
+       </div>
+    </div>
+</div>

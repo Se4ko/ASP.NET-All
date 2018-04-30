@@ -1,0 +1,53 @@
+﻿@model LibrarySystem.Models.BookAdministrationViewModel
+
+<div class="k-edit-form-container">
+    <label class="editor-label">
+        @Html.DisplayNameFor(b => b.Title)
+    </label>
+    <div class="k-textbox">
+        @Html.EditorFor(b => b.Title)
+    </div>
+</div>
+
+<div class="k-edit-form-container">
+    <label class="editor-label">
+        @Html.DisplayNameFor(b => b.Author)
+    </label>
+    <div class="k-textbox">
+        @Html.EditorFor(b => b.Author)
+    </div>
+</div>
+
+<div class="k-edit-form-container">
+    <label class="editor-label">
+        @Html.DisplayNameFor(b => b.ISBN)
+    </label>
+    <div class="k-textbox">
+        @Html.EditorFor(b => b.ISBN)
+    </div>
+</div>
+
+<div class="k-edit-form-container">
+    <label class="editor-label">
+        @Html.DisplayNameFor(b => b.Website)
+    </label>
+    <div class="k-textbox">
+        @Html.EditorFor(b => b.Website)
+    </div>
+</div>
+
+<div class="k-edit-form-container">
+    <label class="editor-label">
+        @Html.DisplayNameFor(b => b.Description)
+    </label>
+    <div class="k-textbox">
+        @Html.EditorFor(b => b.Description)
+    </div>
+</div>
+
+<div class="k-edit-form-container">
+    <label class="editor-label">
+        Category
+    </label>
+    @Html.EditorFor(b => b.Category)
+</div>

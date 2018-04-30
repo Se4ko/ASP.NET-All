@@ -1,0 +1,11 @@
+﻿@model LibrarySystem.Models.CategoryViewModel
+
+@(Html.Kendo()
+    .DropDownListFor(m => m)
+    .Name("Category")
+    .DataTextField("Name")
+    .DataValueField("Id")
+    .DataSource(ds =>
+        {
+            ds.Read("All", "CategoriesAdministration");
+        }))

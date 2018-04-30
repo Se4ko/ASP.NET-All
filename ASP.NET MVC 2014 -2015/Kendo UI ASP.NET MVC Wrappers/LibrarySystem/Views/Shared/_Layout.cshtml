@@ -1,0 +1,52 @@
+﻿@using Kendo.Mvc.UI
+@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Library System</title>
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/kendo")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container">
+        @(Html.Kendo()
+        .Menu()
+        .Name("main-menu")
+        .Items(items =>
+        {
+            items.Add()
+                .Action("Index", "Home")
+                .Text("Home");
+
+
+            if (User.Identity.IsAuthenticated)
+            {
+                items.Add()
+                .Action("Index", "CategoriesAdministration")
+                .Text("Categories");
+                items.Add()
+                .Action("Index", "BooksAdministration")
+                .Text("Books");
+            }
+
+        }))
+
+        @Html.Partial("_LoginPartial")
+    </div>
+    <div class="container">
+        <h1>@ViewBag.Title</h1>
+        @RenderBody()
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Library System</p>
+        </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

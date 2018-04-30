@@ -1,0 +1,70 @@
+﻿@model LibrarySystem.Models.CategoryViewModel
+
+@{
+    ViewBag.Title = "Edit Categories";
+}
+
+@(Html.Kendo()
+    .Grid<LibrarySystem.Models.CategoryViewModel>()
+    .Name("categories")
+    .Sortable()
+    .Pageable()
+    .Filterable()
+    .Editable(edit =>
+        {
+            edit.Enabled(true)
+                .Mode(GridEditMode.PopUp)
+                .Window(w =>
+                    {
+                        w.AutoFocus(true)
+                            .Animation(true)
+                            .Actions(action =>
+                                {
+                                    action.Close();
+                                });
+                    })
+                    .CreateAt(GridInsertRowPosition.Top)
+                    .DisplayDeleteConfirmation("Are you sure you want to delete this category?");
+        })
+    .ToolBar(toolbar => toolbar.Create().Text("Add category"))
+    .DataSource(ds =>
+        {
+            ds.Ajax()
+                .Events(ev => ev.Error("handleError"))
+                .PageSize(5)
+                .Model(model =>
+                    {
+                        model.Id(b => b.Id);
+                    })
+                .Read("Read", "CategoriesAdministration")
+                .Create("Create", "CategoriesAdministration")
+                .Update("Update", "CategoriesAdministration")
+                .Destroy("Delete", "CategoriesAdministration");
+        })
+        .Events(ev => ev.Edit("addOrUpdate"))
+        .Columns(columns =>
+            {
+                columns.Bound(c => c.Name);
+                columns.Command(command =>
+                    {
+                        command.Edit()
+                            .Text("Edit");
+                        command.Destroy()
+                            .Text("Delete");
+                    })
+                    .Title("Actions");
+            }))
+
+<script type="text/javascript">
+    function handleError() {
+        alert("An error occurred. Please try again.");
+        this.cancelChanges();
+    }
+
+    function addOrUpdate(e) {
+        if (!e.model.Id) {
+            $(".k-window .k-window-title").text("Add category");
+            $(".k-window .k-grid-update").html("<span class=\"k-icon k-update\"></span>Create");
+        }
+    }
+</script>

@@ -1,0 +1,15 @@
+﻿@using System.Text.RegularExpressions;
+@model MiniTwitter.Models.TweetViewModel
+
+<div class="well">
+    <div>
+        @Html.Raw(Regex.Replace(
+                        Html.Encode(Model.Content),
+                        @"#([-\w+]+)",
+                        "<a href=\"/Tweets/HashTag/%23$1\">$&</a>"))
+</div>
+<div class="muted">
+    Created on @string.Format("{0:dd.MM.yyyy}", Model.CreationDate) by
+    <a href="@Url.Action("User", "Tweets", new { id = Model.UserId })">@Model.Username</a>
+</div>
+</div>

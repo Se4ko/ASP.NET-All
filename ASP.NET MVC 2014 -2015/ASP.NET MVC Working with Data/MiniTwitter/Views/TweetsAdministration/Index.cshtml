@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Tweets Administration";
+}
+
+<h1>@ViewBag.Title</h1>
+
+@(Html.Kendo()
+    .Grid<MiniTwitter.Models.TweetAdministrationViewModel>()
+    .Name("tweets")
+    .Pageable()
+    .Sortable()
+    .Filterable()
+    .Editable(edit =>
+        {
+            edit.Enabled(true)
+                .TemplateName("TweetsAdministrationViewModel")
+                .Mode(GridEditMode.PopUp)
+                .Window(w =>
+                    {
+                        w.AutoFocus(true)
+                            .Animation(true)
+                            .Actions(action =>
+                                {
+                                    action.Close();
+                                });
+                    })
+                    .DisplayDeleteConfirmation("Are you sure you want to delete this tweet?");
+        })
+    .DataSource(ds =>
+        {
+            ds.Ajax()
+                .Model(model =>
+                    {
+                        model.Id(t => t.Id);
+                        model.Field(t => t.UserId).Editable(false);
+                        model.Field(t => t.Username).Editable(false);
+                    })
+                .Read("All", "TweetsAdministration")
+                .PageSize(5)
+                .Update("Update", "TweetsAdministration")
+                .Destroy("Delete", "TweetsAdministration")
+                .Events(ev => ev.Error("handleError"))
+                .ServerOperation(true);
+        })
+        .Columns(columns =>
+            {
+                columns.Bound(t => t.Content).Title("Content");
+                columns.Bound(t => t.Username)
+                    .Title("Author")
+                    .ClientTemplate("<a href=\"" + Url.Action("User", "Tweets", new { id = "#= data.UserId #" }) + "\"a>#= data.Username #</a>");
+                columns.Bound(t => t.CreationDate)
+                    .Title("Creation date")
+                    .Format("{0:dd.MM.yyyy HH:mm:ss}");
+                columns.Command(command =>
+                    {
+                        command.Edit();
+                        command.Destroy();
+                    }).Title("Actions");
+            }))
+
+@section Scripts{
+    <script type="text/javascript">
+        function handleError() {
+            alert("An error occurred. Please try again.");
+            this.cancelChanges();
+        }
+    </script>
+}

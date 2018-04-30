@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MiniTwitter.Models.TweetViewModel>
+@{
+    ViewBag.Title = "Tweets by hashtag " + ViewContext.RouteData.Values["hashTag"];
+}
+
+<h1>@ViewBag.Title</h1>
+
+@if (!Model.Any())
+{
+    <div class="text-error">There are no tweets for this hashtag.</div>
+}
+else
+{
+    foreach (var tweet in Model)
+    {
+        @Html.Partial("_Tweet", tweet)
+    }
+}

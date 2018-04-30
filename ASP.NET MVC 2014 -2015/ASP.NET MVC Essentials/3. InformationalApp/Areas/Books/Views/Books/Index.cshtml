@@ -1,0 +1,25 @@
+﻿@model IEnumerable<_3.InformationalApp.Data.Book>
+
+@{
+    ViewBag.Title = "Books";
+}
+
+@section Heading {
+    <h1>@ViewBag.Title</h1>
+}
+
+@foreach (var item in Model)
+{
+    <div>
+        <h4>@item.Title</h4>
+
+        <h5>
+            @Html.DisplayFor(model => item.Author)
+        </h5>
+
+        <p>
+            @Html.DisplayFor(model => item.Description)
+        </p>
+    </div>
+    <hr />
+}
