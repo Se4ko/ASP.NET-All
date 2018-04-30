@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{6983E054-7E4B-4379-A2FA-1F42C3B36B95}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StudentSystem.Data/StudentsSystemData.cs">
+    <Files>
+      <File FileName="StudentSystem.Web/Controllers/HomeController.cs" Line="19" Column="36" />
+      <File FileName="StudentSystem.Data/StudentSystemDbContext.cs" Line="20" Column="9" />
+      <File FileName="StudentSystem.Data/IStudentSystemDbContext.cs" Line="1" Column="1" />
+      <File FileName="StudentSystem.Data/StudentsSystemData.cs" Line="14" Column="46" />
+      <File FileName="StudentSystem.Data/IStudentSystemData.cs" Line="9" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
