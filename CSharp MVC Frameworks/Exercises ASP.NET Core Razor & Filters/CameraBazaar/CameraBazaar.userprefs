@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{D098EA14-5657-42AE-AB62-5AEA5B952961}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CameraBazaar.Services/CameraService.cs">
+    <Files>
+      <File FileName="CameraBazaar.Web/Views/Camera/Add.cshtml" Line="48" Column="57" />
+      <File FileName="CameraBazaar.Services/CameraService.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.CameraBazaar.Web PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
