@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{2E07B071-F924-40D1-95C9-98CD1DBA7984}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/SourceControlSystem.Services.Data/CommitsService.cs">
+    <Files>
+      <File FileName="Server/SourceControlSystem.Api/Controllers/ProjectsController.cs" Line="1" Column="1" />
+      <File FileName="Server/SourceControlSystem.Api/Controllers/CommitsController.cs" Line="39" Column="13" />
+      <File FileName="Server/SourceControlSystem.Api/Controllers/AccountController.cs" Line="1" Column="1" />
+      <File FileName="Server/SourceControlSystem.Api/Infrastructure/Mapping/IHaveCustomMappings.cs" Line="8" Column="6" />
+      <File FileName="Server/SourceControlSystem.Api/Infrastructure/Mapping/IMapFrom.cs" Line="1" Column="1" />
+      <File FileName="Server/SourceControlSystem.Api/App_Start/AutoMapperConfig.cs" Line="8" Column="21" />
+      <File FileName="Server/SourceControlSystem.Api/Global.asax.cs" Line="13" Column="71" />
+      <File FileName="SourceControlSystem.Common/Constants/Assemblies.cs" Line="3" Column="18" />
+      <File FileName="Services/SourceControlSystem.Services.Data/CommitsService.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,0 +1,16 @@
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\SourceControlSystem.Models.dll.config
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\SourceControlSystem.Models.dll
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\SourceControlSystem.Models.pdb
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\EntityFramework.dll
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\EntityFramework.SqlServer.dll
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\SourceControlSystem.Common.dll
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\SourceControlSystem.Common.pdb
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\EntityFramework.xml
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\EntityFramework.SqlServer.xml
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\obj\Debug\SourceControlSystem.Models.csprojResolveAssemblyReference.cache
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\obj\Debug\SourceControlSystem.Models.dll
+\\Mac\Home\Shared\SourceControlSystem\Data\SourceControlSystem.Models\obj\Debug\SourceControlSystem.Models.pdb

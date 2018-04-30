@@ -1,0 +1,4 @@
+\\Mac\Home\Shared\SourceControlSystem\SourceControlSystem.Common\bin\Debug\SourceControlSystem.Common.dll
+\\Mac\Home\Shared\SourceControlSystem\SourceControlSystem.Common\bin\Debug\SourceControlSystem.Common.pdb
+\\Mac\Home\Shared\SourceControlSystem\SourceControlSystem.Common\obj\Debug\SourceControlSystem.Common.dll
+\\Mac\Home\Shared\SourceControlSystem\SourceControlSystem.Common\obj\Debug\SourceControlSystem.Common.pdb
