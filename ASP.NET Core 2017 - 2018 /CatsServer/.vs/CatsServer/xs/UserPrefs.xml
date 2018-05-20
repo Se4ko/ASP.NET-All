@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{B94B2251-86FA-4F61-BD4D-38EC25587502}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
+    <Files>
+      <File FileName="Startup.cs" Line="21" Column="39" />
+      <File FileName="Infrastructure/Extensions/ApplicationBuilderExtensions.cs" Line="39" Column="4" />
+      <File FileName="Handlers/AddCatHandler.cs" Line="16" Column="31" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="AppSettings.cs" Line="3" Column="18" />
+      <File FileName="Middleware/DatabaseMigrationMiddleWare.cs" Line="25" Column="2" />
+      <File FileName="Data/Migrations/CatsDbContextModelSnapshot.cs" Line="1" Column="1" />
+      <File FileName="Handlers/CatDetailsHandler.cs" Line="1" Column="1" />
+      <File FileName="Handlers/HomeHandler.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CatsServer PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
