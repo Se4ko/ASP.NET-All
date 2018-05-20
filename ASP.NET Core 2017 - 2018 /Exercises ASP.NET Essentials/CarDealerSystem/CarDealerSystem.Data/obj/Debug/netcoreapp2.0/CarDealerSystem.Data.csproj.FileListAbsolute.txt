@@ -1,0 +1,11 @@
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/bin/Debug/netcoreapp2.0/CarDealerSystem.Data.deps.json
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/bin/Debug/netcoreapp2.0/CarDealerSystem.Data.dll
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/bin/Debug/netcoreapp2.0/CarDealerSystem.Data.pdb
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/bin/Debug/netcoreapp2.0/CarDealerSystem.Data.Models.dll
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/bin/Debug/netcoreapp2.0/CarDealerSystem.Data.Models.pdb
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/obj/Debug/netcoreapp2.0/CarDealerSystem.Data.csprojResolveAssemblyReference.cache
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/obj/Debug/netcoreapp2.0/CarDealerSystem.Data.csproj.CoreCompileInputs.cache
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/obj/Debug/netcoreapp2.0/CarDealerSystem.Data.AssemblyInfoInputs.cache
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/obj/Debug/netcoreapp2.0/CarDealerSystem.Data.AssemblyInfo.cs
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/obj/Debug/netcoreapp2.0/CarDealerSystem.Data.dll
+/Users/sekul/Pictures/DEKTOP /MICROSOFT/Telerik/ASP.NET CORE Ivaylo Kenov/ASP.NET Core /Exercises ASP.NET Essentials/CarDealerSystem/CarDealerSystem.Data/obj/Debug/netcoreapp2.0/CarDealerSystem.Data.pdb
